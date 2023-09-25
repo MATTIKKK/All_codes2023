@@ -1,0 +1,8 @@
+.first_line {
+    color: blueviolet;
+    color: rgba(red, rgb(31, 200, 189), blue, alpha);
+    color: rgb(rgb(23, 21, 139), green, blue);
+    color: #237862;
+    color: #fff000;
+    color: hsl(hue, saturation, lightness);
+}

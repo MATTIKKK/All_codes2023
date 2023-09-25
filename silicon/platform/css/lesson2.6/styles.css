@@ -1,0 +1,17 @@
+a:hover {
+    color: red;
+    text-decoration: underline;
+    font-size:30px;
+    cursor: pointer;
+}
+
+a {
+    color: blue;
+    font-size:20px;
+}
+
+a:active {
+    color:purple;
+    text-decoration: line-through;
+    font-size:18px;
+}

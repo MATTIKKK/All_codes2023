@@ -1,17 +1,21 @@
-a:hover {
+p:hover {
     color: red;
     text-decoration: underline;
     font-size:30px;
     cursor: pointer;
 }
 
-a {
+p {
     color: blue;
     font-size:20px;
 }
 
-a:active {
+p:active {
     color:purple;
     text-decoration: line-through;
     font-size:18px;
+}
+
+p:visited {
+    
 }

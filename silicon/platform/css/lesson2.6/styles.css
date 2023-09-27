@@ -1,21 +1,44 @@
-p:hover {
+a:hover {
     color: red;
     text-decoration: underline;
     font-size:30px;
     cursor: pointer;
 }
 
-p {
+a {
     color: blue;
     font-size:20px;
 }
 
-p:active {
+a:active {
     color:purple;
     text-decoration: line-through;
     font-size:18px;
 }
 
-p:visited {
-    
+a:visited {
+    color: green;
+}
+
+p {
+    display: none;
+    background-color: yellow;
+    font-size: 20px;
+}
+
+div.another-div p:first-child {
+    color:red;
+}
+
+div.another-div p:last-child {
+    color:pink;
+}
+
+div.another-div p:nth-child(2n + 1) {
+    color:gray;
+}
+
+
+div:hover p{
+    display:block;
 }

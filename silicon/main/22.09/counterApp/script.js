@@ -2,7 +2,24 @@ const count = document.querySelector(".count");
 const add = document.querySelector(".add");
 const reset = document.querySelector(".reset");
 const subtract = document.querySelector(".subtract");
-const buttons = document.querySelector(".buttons");
+
+
+add.addEventListener("click", function() {
+    count.innerText++;
+    if(count.innerText == 10){
+        count.style.color = "red";
+        add.disabled = true;
+        
+    }
+    reset.disabled = false;
+});
+
+reset.addEventListener("click", function() {
+    count.innerText = 0;
+    add.disabled = false;
+    count.style.color = "white";
+    reset.disabled = true;
+});
 
 
 // buttons.addEventListener("click", (e) => {
@@ -23,22 +40,3 @@ const buttons = document.querySelector(".buttons");
 // })
 
 
-add.addEventListener("click", () => {
-    if(count.innerHTML < 10)
-    count.innerHTML++;
-    setColor();
-})
-
-
-reset.addEventListener("click", () => {
-    count.innerHTML = 0;
-    setColor();
-})
-
-function setColor() {
-    if (count.innerHTML == 10) {
-        count.style.color = "red";
-    }else{
-        count.style.color = "white";
-    }
-}

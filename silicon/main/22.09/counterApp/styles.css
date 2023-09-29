@@ -44,7 +44,7 @@ img {
   height: 100vh;
 }
 
-.counter-div{
+.counter{
   width: 40rem;
   border: 1px solid var(--grey);
   padding: 1rem;
@@ -54,7 +54,7 @@ img {
   border-radius: 5px;
 }
 
-.counter-div > * {
+.counter > * {
   margin-bottom: 2rem;
 }
 

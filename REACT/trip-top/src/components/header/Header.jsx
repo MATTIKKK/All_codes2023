@@ -5,8 +5,17 @@ import { useState } from "react";
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import {format} from "date-fns";
 
 const Header = () => {
+    const [openOptions, setOpenOptions] = useState(false);
+    const [options, setOptions] = useState({
+        adult: 1,
+        children: 0,
+        room: 1,
+    })
+
+    const [openDate, setOpenDate] = useState(false);
     const [date, setDate] = useState([
         {
           startDate: new Date(),
@@ -55,19 +64,19 @@ const Header = () => {
                     </div>
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
-                        <span className="headerSearchText">date to date</span>
-                        <DateRange
+                        <span onClick={() => setOpenDate(!openDate)} className="headerSearchText">{`${format(date[0].startDate,"dd/MM/yyyy")} to ${format(date[0].endDate,"dd/MM/yyyy")}`}</span>
+                        {openDate && <DateRange
                             editableDateInputs={true}
                             onChange={(item) => setDate([item.selection])}
                             moveRangeOnFirstSelection={false}
                             ranges={date}
                             className="date"
                             minDate={new Date()}
-                        />
+                        />}
                     </div>
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faPerson} className="headerIcon"/>
-                        <span className="headerSearchText">2 adults 2 children 1 room</span>
+                        <span className="headerSearchText">{`${options.adult} adult · ${options.children} child · ${options.room} room`}</span>
                     </div>
                     <div className="headerSearchItem">
                         <button className="headerBtn">Search</button>

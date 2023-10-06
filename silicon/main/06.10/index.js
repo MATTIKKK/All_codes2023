@@ -91,12 +91,31 @@ function arc() {
 
         arr.forEach(element => {
             
-
+            let isActive = false;
             let li = document.createElement("li");
-
-
+                        
             let span = document.createElement("span");
             span.innerText = element.title;
+            let input = document.createElement("input");
+
+            li.appendChild(span);
+
+            span.addEventListener("click", () => {
+                input.type = "text";
+                input.value = span.textContent;
+                li.insertBefore(input, span);
+                li.removeChild(span);
+                isActive = true;
+            });
+
+            input.addEventListener("keypress", (event) => {
+                if(event.key === "Enter"){
+                    span.innerText = input.value;
+                    li.insertBefore(span, input);
+                    li.removeChild(input);
+                }
+                
+            });
             
             let del = document.createElement("button");
             del.innerText = "X";
@@ -119,7 +138,7 @@ function arc() {
                 element.isDone = !element.isDone;
             });
 
-            li.appendChild(span);
+            
             li.appendChild(checkbox);
             li.appendChild(del);
 

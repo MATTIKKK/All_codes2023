@@ -23,4 +23,5 @@
 .featuredTitles {
     position: absolute;
     bottom: 10px;
+    line-height: 0.5;
 }

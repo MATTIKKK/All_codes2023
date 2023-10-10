@@ -24,7 +24,6 @@ function App() {
                 <Route path="/attractions" element={<Attractions />} />
                 <Route path="/carrentals" element={<CarRentals />} />
                 <Route path="/taxis" element={<Taxis />} />
-
             </Routes>
         </BrowserRouter>
     );

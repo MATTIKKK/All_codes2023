@@ -127,7 +127,7 @@ const Header = ({type}) => {
                             </div>}
                         </div>
                         <div className="headerSearchItem">
-                            <button className="headerBtn">Search</button>
+                            <a href="/stays" className="headerBtn">Search</a>
                         </div>
                     </div>
                 </>

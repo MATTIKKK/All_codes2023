@@ -1,8 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar {
     height: 50px;
     background-color: rgb(109, 35, 148);
     display: flex;
     justify-content: center;
+    padding: 50px;
 }
 
 .navContainer {
@@ -15,7 +22,11 @@
 }
 
 .logo {
+    color:white;
+    text-decoration: none;
+    font-size:40px;
     font-weight: 500;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .navButton {

@@ -8,6 +8,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns";
 
 const Header = ({type}) => {
+
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
@@ -35,28 +36,38 @@ const Header = ({type}) => {
     return (
         <div className="header">
             <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
-                <div className="headerList">
-                    <div className="headerListItem active" >
-                        <FontAwesomeIcon icon={faBed} />
-                        <span>Stays</span>
-                    </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faPlane} />
-                        <span>Flights</span>
-                    </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faCar} />
-                        <span>Car rentals</span>
-                    </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faBed} />
-                        <span>Attractions</span>
-                    </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faTaxi} />
-                        <span>Airport taxis</span>
-                    </div>
-                </div>
+                <ul className="headerList">
+                    <CustomLink href="/stays" >
+                        <span>
+                            <FontAwesomeIcon icon={faBed} />
+                            &nbsp;&nbsp;Stays
+                        </span>
+                    </CustomLink>
+                    <CustomLink href="/flights">
+                        <span>
+                            <FontAwesomeIcon icon={faPlane} />
+                            &nbsp;&nbsp;Flights
+                        </span>
+                    </CustomLink>
+                    <CustomLink href="/carrentals">
+                        <span>
+                            <FontAwesomeIcon icon={faCar} />
+                            &nbsp;&nbsp;Car rentals
+                        </span>
+                    </CustomLink>
+                    <CustomLink href="/attractions">
+                        <span>
+                            <FontAwesomeIcon icon={faBed} />
+                            &nbsp;&nbsp;Attractions
+                        </span>
+                    </CustomLink>
+                    <CustomLink href="/taxis">
+                        <span>
+                            <FontAwesomeIcon icon={faTaxi} />
+                            &nbsp;&nbsp;Airport taxis
+                        </span>
+                    </CustomLink>
+                </ul>
                 { type !== "list" &&
                 <>
                     <h1 className="headerTitle">A lifetime of discounts? It's Genius.</h1>
@@ -127,4 +138,14 @@ const Header = ({type}) => {
     )
 }
 
-export default Header
+
+function CustomLink({href, children, ...props}) {
+    const path = window.location.pathname;
+    return (
+        <li className={path === href ? "headerListItem active" : "headerListItem"}>
+            <a href={href}>{children}</a>
+        </li>
+    );
+}
+
+export default Header;

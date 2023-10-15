@@ -99,8 +99,11 @@ const List = () => {
             <SearchItem />
           </div>
         </div>
-
+         
       </div>
+      <div className="footernew">
+          <Footer />
+        </div> 
     </div>
   );
 };

@@ -38,7 +38,7 @@ const Header = ({type}) => {
 
     const navigate = useNavigate()
 
-    const handleSearch = () => {
+    const handleSearch = () => {    
         navigate("hotels", {state: {destination, date, options}})
     }
 

@@ -85,3 +85,8 @@
 .listResult {
     flex: 3;
 }
+
+.footernew{
+    display: flex;
+    justify-content: center;
+}

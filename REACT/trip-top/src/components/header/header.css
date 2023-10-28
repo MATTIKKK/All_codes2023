@@ -1,5 +1,5 @@
 .header {
-    background-color: rgb(109, 35, 148);
+    background-color: rgb(95, 178, 241);
     color: white;
     display: flex;
     justify-content: center;
@@ -9,11 +9,14 @@
 .headerContainer {
     width: 100%;
     max-width: 1024px;
-    margin: 20px 0px 100px 0px;
+    margin: 50px 0px 50px 0px;
+    font-size: 30px;
 }
 
 .headerContainer.listMode {
-    margin: 20px 0px 0px 0px;
+    margin: 50px 0px 50px 0px;
+    font-size: 30px;
+    
 }
 
 
@@ -49,7 +52,7 @@
 }
 
 .headerBtn {
-    background-color: rgb(107, 64, 187);
+    background-color: rgb(85, 146, 206);
     color: white;
     font-weight: 500;
     border: none;
@@ -102,42 +105,3 @@
     z-index: 2;
 }
 
-.options {
-    position: absolute;
-    top: 50px;
-    background-color: white;
-    color: gray;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px -5px black;
-    z-index:2;
-}
-
-
-.optionItem {
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.optionCounter {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-style: 12px;
-    color: black;
-}
-
-.optionCounterButton {
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgb(107, 64, 187);
-    color: rgb(107, 64, 187);
-    cursor: pointer;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.optionCounterButton:disabled {
-    cursor: not-allowed;
-}

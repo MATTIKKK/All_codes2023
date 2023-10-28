@@ -11,14 +11,15 @@ import Attractions from "./pages/attractions/Attractions";
 import CarRentals from "./pages/carrentals/CarRentals";
 import Taxis from "./pages/taxis/Taxis";
 import List from "./pages/list/List";
+import ProfilePage from "./pages/profile/Profile";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/hotels" element={<List />} />
-                <Route path="/hotels/:id" element={<Hotel />} />
+                <Route path="/list" element={<List />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/flights" element={<Flights />} />
                 <Route path="/attractions" element={<Attractions />} />
                 <Route path="/carrentals" element={<CarRentals />} />

@@ -6,26 +6,27 @@ const Featured = () => {
   return (
     <div className="featured">
         <div className="featuredItem" onClick={() => {navigate("/stays")}}>
-            <img src="https://assets.editorial.aetnd.com/uploads/2009/12/gettyimages-858637934.jpg" alt="canyon" className="featuredImg" />
+            <img src="https://www.aljazeera.com/wp-content/uploads/2022/03/000_9VB6LK.jpg?resize=770%2C513&quality=80" className="featuredImg"/>
             <div className="featuredTitles">
-                <h1>Las Vegas</h1>
-                <h2>Red Rock Canyon</h2>
+                <h1>Tokaev Zhomart</h1>
+                <h2>Kazakhstan President</h2>
             </div>
         </div>
         <div className="featuredItem" onClick={() => {navigate("/stays")}}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg" alt="gate" className="featuredImg" />
+            <img src="https://cdn.britannica.com/70/145070-050-B810D3E1/Justin-Bieber.jpg?w=300&h=169&c=crop" alt="gate" className="featuredImg" />
             <div className="featuredTitles">
-                <h1>San Francisco</h1>
-                <h2>Golden Gate</h2>
+                <h1>Justin Bieber</h1>
+                <h2>Handsome boy</h2>
             </div>
         </div>
         <div className="featuredItem" onClick={() => {navigate("/stays")}}>
-            <img src="https://www.miamibeachfl.gov/wp-content/uploads/2023/01/miamibeachsouthpointe.jpg" alt="beach" className="featuredImg" />
+            <img src="https://s.abcnews.com/images/GMA/ariana-grande-gty-jt-220516_1652723943485_hpMain_16x9_1600.jpg" alt="beach" className="featuredImg" />
             <div className="featuredTitles">
-                <h1>Miami</h1>
-                <h2>Miami Beach</h2>
+                <h1>Ariana Grande</h1>
+                <h2>Singer</h2>
             </div>
         </div>
+        
     </div>
   )
 }

@@ -1,41 +1,86 @@
-import "./searchItem.css";
+import {
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardFooter,
+  MDBCardImage,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBRow,
+  MDBTextArea,
+} from "mdb-react-ui-kit";
 
-const SearchItem = () => {
+export default function CommentCard() {
   return (
-    <div className="searchItem">
-      <img
-        src="https://thehoughtonhotel.com/wp-content/uploads/2023/02/Houghton-Hotel-3-20-scaled.jpg"
-        alt=""
-        className="siImg"
-      />
-      <div className="siDesc">
-        <h1 className="siTitle">Tower Street Apartments</h1>
-        <span className="siDistance">500m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
-        <span className="siSubtitle">
-          Studio Apartment with Air conditioning
-        </span>
-        <span className="siFeatures">
-          Entire studio • 1 bathroom • 21m² 1 full bed
-        </span>
-        <span className="siCancelOp">Free cancellation </span>
-        <span className="siCancelOpSubtitle">
-          You can cancel later, so lock in this great price today!
-        </span>
-      </div>
-      <div className="siDetails">
-        <div className="siRating">
-          <span>Excellent</span>
-          <button>8.9</button>
-        </div>
-        <div className="siDetailTexts">
-          <span className="siPrice">$112</span>
-          <span className="siTaxOp">Includes taxes and fees</span>
-          <button className="siCheckButton">See availability</button>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+      <MDBContainer className="py-5" style={{ maxWidth: "1000px" }}>
+        <MDBRow className="justify-content-center">
+          <MDBCol md="12" lg="10" xl="8">
+            <MDBCard>
+              <MDBCardBody>
+                <div className="d-flex flex-start align-items-center">
+                  <MDBCardImage
+                    className="rounded-circle shadow-1-strong me-3"
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
+                    alt="avatar"
+                    width="60"
+                    height="60"
+                  />
+                  <div>
+                    <h6 className="fw-bold text-primary mb-1">Lily Coleman</h6>
+                    <p className="text-muted small mb-0">
+                      Shared publicly - Jan 2020
+                    </p>
+                  </div>
+                </div>
 
-export default SearchItem;
+                <p className="mt-3 mb-4 pb-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip consequat.
+                </p>
+
+                <div className="small d-flex justify-content-start">
+                  <a href="#!" className="d-flex align-items-center me-3">
+                    <MDBIcon far icon="thumbs-up me-2" />
+                    <p className="mb-0">Like</p>
+                  </a>
+                  <a href="#!" className="d-flex align-items-center me-3">
+                    <MDBIcon far icon="comment-dots me-2" />
+                    <p className="mb-0">Comment</p>
+                  </a>
+                  <a href="#!" className="d-flex align-items-center me-3">
+                    <MDBIcon fas icon="share me-2" />
+                    <p className="mb-0">Share</p>
+                  </a>
+                </div>
+              </MDBCardBody>
+
+              <MDBCardFooter
+                className="py-3 border-0"
+                style={{ backgroundColor: "#f8f9fa" }}
+              >
+                <div className="d-flex flex-start w-100">
+                  <MDBCardImage
+                    className="rounded-circle shadow-1-strong me-3"
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
+                    alt="avatar"
+                    width="40"
+                    height="40"
+                  />
+                  <MDBTextArea label='Message' id='textAreaExample' rows={4} style={{backgroundColor: '#fff'}} wrapperClass="w-100" />
+                </div>
+                <div className="float-end mt-2 pt-1">
+                  <MDBBtn size="sm" className="me-1">Post comment</MDBBtn>
+                  <MDBBtn outline size="sm">Cancel</MDBBtn>
+                </div>
+              </MDBCardFooter>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </section>
+  );
+}

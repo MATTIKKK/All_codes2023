@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
+
 .navbar {
     height: 50px;
-    background-color: rgb(109, 35, 148);
+    background-color: rgb(95, 178, 241);
     display: flex;
     justify-content: center;
     padding: 50px;
@@ -32,8 +33,12 @@
 .navButton {
     margin-left: 20px;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    color: rgb(109, 35, 148);
+    color: rgb(67, 170, 230);
     border-radius: 5px;
+}
+
+.navButton a{
+    color: white;
 }

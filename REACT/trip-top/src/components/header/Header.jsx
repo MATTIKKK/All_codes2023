@@ -16,7 +16,7 @@ const Header = ({type}) => {
         <div className="header">
             <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
                 <ul className="headerList">
-                    <CustomLink href="/list" >
+                    <CustomLink href="/stays" >
                         <span>
                             <FontAwesomeIcon icon={faBed} />
                             &nbsp;&nbsp;Tweets

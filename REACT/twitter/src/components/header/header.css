@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    background-color: rgb(111, 209, 255);
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+}
+
+.headerItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerButtons button{
+    margin-left: 15px;
+    padding: 3px 10px;
+    background-color: white;
+    border: 1px solid rgb(111, 209, 255);
+    border-radius: 5px;
+    color:rgb(63, 166, 255);
+    
+}
+
+.headerButtons button:hover{
+    box-shadow: 2px 2px 5px rgb(26, 146, 250);
+}
+
+.headerTitle {
+    color: white;
+}

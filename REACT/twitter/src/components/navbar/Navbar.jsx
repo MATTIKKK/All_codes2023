@@ -3,6 +3,7 @@ import './navbar.css'
 import {faBell, faEnvelope, faHashtag, faHouse, faList, faUser} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome' 
 import ProfileInfo from '../profile_info/ProfileInfo'
+import Posts from '../posts/Posts'
 
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
     <div className='navbar'>
         <section className='navigation'>
             <div className='navItems'>
-                <CustomLink href="/">
+                <CustomLink href="/posts">
                     <span>
                         <FontAwesomeIcon icon={faHouse} />
                         &nbsp;&nbsp;Home
@@ -49,7 +50,11 @@ const Navbar = () => {
             </div>
         </section>
         <section className='posts'>
-            {window.location.pathname === "/profile" ? <ProfileInfo /> : ""} 
+            <div>
+                {window.location.pathname === "/profile" ? <ProfileInfo /> : ""} 
+                {window.location.pathname === "/posts" ? <Posts /> : ""} 
+            </div>
+            
         </section>
         <section className='search'>
             

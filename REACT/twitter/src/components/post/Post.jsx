@@ -9,17 +9,25 @@ const Post = () => {
     const [comments, setComments] = useState([]);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const updatedComments = [
-            ...comments,
-            comment
-        ];
-        setComments(updatedComments);
-        setComment("");
+        if(comment.trim() !== ""){
+            const updatedComments = [
+                ...comments,
+                comment
+            ];
+
+            setComments(updatedComments);
+            setComment("");
+        }
+        
     }
 
     let arr = comments.map((com) => {
         return (
-            <div className='arrayItem'>{com}</div>
+            <div className='arrayItem'>
+                <span>{com}</span>
+                <button className='delete'>x</button>
+            </div>
+
         );
     })
     return (

@@ -47,14 +47,12 @@
     
 }
 
-.arrayItems{
-
-}
-
 .arrayItem{
     border: 1px solid lightgray;
     height: 20px;
     padding: 5px;
     margin: 10px 0;
     border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
 }

@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="header">header </div>
+    <div class="main">
+        <h1>Todo app</h1>
+        <input type="text" id="createTodoInput">
+        <button id="submit" onclick="addTodoUI()">+</button>
+        <div class="parent" id="parent">
+
+            <div class="todolist">
+
+                <div class="display">
+                    <h5>Things to buy </h5>
+                    <button>x</button>
+                </div>
+
+                <input type="text" id="input">
+                <button  onclick="createTask()">+</button>
+                <ul id="list">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">footer </div>
+
+    <script src="index.js"></script>
 </body>
 </html>

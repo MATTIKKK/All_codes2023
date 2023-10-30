@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 50px;
+    background: aliceblue;
+}
+
+.main {
+    height: 350px;
+    background: #c0efef;
+    flex-grow: 1;
+}
+
+.footer {
+    height: 50px;
+    background: beige;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.todolist {
+    padding: 10px;
+    background: #9ef4a3;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px;
+    border: 1px solid;
+}
+
+.todolist h5 {
+    color: red;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display button {
+    height: 20px;
+}

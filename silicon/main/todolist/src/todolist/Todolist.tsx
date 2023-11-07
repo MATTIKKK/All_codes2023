@@ -1,5 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { FilterValuesType } from "../App";
+import AddItemForm from "../addItemForm/AddItemForm";
 
 export type TaskType = {
   id: string;
@@ -11,63 +12,43 @@ type PropsType = {
   id: string;
   title: string;
   tasks: Array<TaskType>;
-  removeTask: (id: string) => void;
+  removeTask: (id: string, todolistId: string) => void;
   changeCheckbox: Function;
   setNewFilter: (value: FilterValuesType, todolistId: string) => void;
-  addTask: (title: string) => void;
+  addTask: (title: string, todolistId: string) => void;
   filterType: FilterValuesType;
+  removeTodolist: (todolistId: string) => void;
 };
 
 const Todolist = (props: PropsType) => {
-  const [newValue, setNewValue] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const removeTodolist = () => props.removeTodolist(props.id);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setNewValue(e.target.value);
-  };
-
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    setError(null);
-    if (e.key === "Enter") {
-      addTask();
-    }
-  };
-
-  const addTask = () => {
-    if (newValue.trim() !== "") {
-      props.addTask(newValue.trim());
-      setNewValue("");
-      setError(null);
-    }else{
-      setError("Field is required");
-    }
-  };
   const handleClickAll = () => props.setNewFilter("all", props.id);
   const handleClickActive = () => props.setNewFilter("active", props.id);
   const handleClickCompleted = () => props.setNewFilter("completed", props.id);
 
+  const addTask = (title: string) => {
+    props.addTask(title, props.id)
+  }
+
+
   return (
     <div className="App">
       <div>
-        <h3>{props.title}</h3>
-        <div>
-          <input
-            value={newValue}
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-            className={error ? "error" : ""}
-          />
-          <button onClick={addTask}>+</button>
-          {error && <div className="error-message">{error}</div>}
-        </div>
+        <h3>
+          {props.title}
+          <button onClick={removeTodolist}>X</button>
+        </h3>
+
+        <AddItemForm addTask={addTask} />
         <ul>
           {props.tasks.map((t) => {
             const removeTask = () => {
-              props.removeTask(t.id);
+              props.removeTask(t.id, props.id);
             };
 
-            const handleChangeCheckbox = () => {
-              props.changeCheckbox(t.id);
+            const handleChangeCheckbox = (e: any) => {
+              props.changeCheckbox(t.id, e.target.checked, props.id);
             };
 
             return (
@@ -109,3 +90,4 @@ const Todolist = (props: PropsType) => {
 };
 
 export default Todolist;
+

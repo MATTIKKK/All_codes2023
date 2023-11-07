@@ -38,6 +38,20 @@ function App() {
     }
   };
 
+  const handleChangeTitle = (
+    taskId: string,
+    title: string,
+    todolistId: string
+  ) => {
+    let tasks = tasksObj[todolistId];
+    let task = tasks.find((t) => t.id === taskId);
+    if (task) {
+      task.title = title;
+    }
+
+    setTasks({ ...tasksObj });
+  };
+
   const setNewFilter = (value: FilterValuesType, todolistId: string) => {
     let todolist = todolists.find((tl) => tl.id === todolistId);
     if (todolist) {
@@ -71,10 +85,18 @@ function App() {
     });
   };
 
+  const changeTodolistTitle = (title: string, todolistId: string) => {
+    const todolist = todolists.find(t => t.id === todolistId);
+    if(todolist){
+      todolist.title = title;
+      setTodolists([...todolists]);
+    }
+  }
+
   return (
     <div className="App">
       <Container fixed>
-        <Grid container style={ { padding: "20px" } }>
+        <Grid container style={{ padding: "20px" }}>
           <AddItemForm addTask={addTodolist} />
         </Grid>
 
@@ -104,6 +126,8 @@ function App() {
                     addTask={addTask}
                     filterType={tl.filter}
                     removeTodolist={removeTodolist}
+                    handleChangeTitle={handleChangeTitle}
+                    changeTodolistTitle={changeTodolistTitle}
                   />
                 </Paper>
               </Grid>

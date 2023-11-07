@@ -21,7 +21,6 @@ function App() {
         <div className="app">
             <Todolist title="what to learn" tasks={tasks1}/>
             <Todolist title="what to buy" tasks={tasks2}/>
-
         </div>
     );
 }

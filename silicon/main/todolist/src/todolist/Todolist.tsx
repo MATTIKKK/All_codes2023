@@ -2,7 +2,7 @@ import React from "react";
 import { FilterValuesType } from "../App";
 import AddItemForm from "../addItemForm/AddItemForm";
 import { Delete, Favorite, FavoriteBorder } from "@material-ui/icons";
-import { Button, Checkbox, IconButton } from "@material-ui/core";
+import { Button, Checkbox, Grid, IconButton } from "@material-ui/core";
 
 export type TaskType = {
   id: string;
@@ -43,7 +43,9 @@ const Todolist = (props: PropsType) => {
           </IconButton>
         </h3>
 
-        <AddItemForm addTask={addTask} />
+        <Grid container style={ { padding: "10px" } }>
+          <AddItemForm addTask={addTask} />
+        </Grid>
         <ul>
           {props.tasks.map((t) => {
             const removeTask = () => {

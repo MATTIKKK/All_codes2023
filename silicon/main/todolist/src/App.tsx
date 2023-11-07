@@ -3,6 +3,7 @@ import "./App.css";
 import Todolist, { TaskType } from "./todolist/Todolist";
 import { v1 } from "uuid";
 import AddItemForm from "./addItemForm/AddItemForm";
+import { Container, Grid, Paper } from "@material-ui/core";
 
 export type FilterValuesType = "all" | "active" | "completed";
 
@@ -13,11 +14,10 @@ type TodolistType = {
 };
 
 type TaskStateType = {
-  [key: string]: Array<TaskType>
+  [key: string]: Array<TaskType>;
 };
 
-function App() {  
-
+function App() {
   const [todolists, setTodolists] = useState<Array<TodolistType>>([]);
 
   const [tasksObj, setTasks] = useState<TaskStateType>({});
@@ -55,52 +55,62 @@ function App() {
   };
 
   const removeTodolist = (todolistId: string) => {
-      let filteredTodolists = todolists.filter(tl => tl.id !== todolistId);
-      setTodolists(filteredTodolists);
-      delete tasksObj[todolistId];
-      setTasks({...tasksObj});   
+    let filteredTodolists = todolists.filter((tl) => tl.id !== todolistId);
+    setTodolists(filteredTodolists);
+    delete tasksObj[todolistId];
+    setTasks({ ...tasksObj });
   };
 
   const addTodolist = (title: string) => {
     let newTodolistId = v1();
-    let newTodolist: TodolistType = {id: newTodolistId, title, filter: "all"};
+    let newTodolist: TodolistType = { id: newTodolistId, title, filter: "all" };
     setTodolists([newTodolist, ...todolists]);
     setTasks({
-      ...tasksObj, 
-      [newTodolistId]: []
-    })
+      ...tasksObj,
+      [newTodolistId]: [],
+    });
   };
 
   return (
     <div className="App">
-      <AddItemForm addTask={addTodolist}/>
+      <Container fixed>
+        <Grid container style={ { padding: "20px" } }>
+          <AddItemForm addTask={addTodolist} />
+        </Grid>
 
-      {todolists.map((tl) => {
-        let mainTasks = tasksObj[tl.id];
-        
-        if (tl.filter === "completed") {
-          mainTasks = mainTasks.filter((t) => t.isDone === true);
-        }
+        <Grid container spacing={7}>
+          {todolists.map((tl) => {
+            let mainTasks = tasksObj[tl.id];
 
-        if (tl.filter === "active") {
-          mainTasks = mainTasks.filter((t) => t.isDone === false);
-        }
+            if (tl.filter === "completed") {
+              mainTasks = mainTasks.filter((t) => t.isDone === true);
+            }
 
-        return (
-          <Todolist
-            key={tl.id}
-            id={tl.id}
-            title={tl.title}
-            tasks={mainTasks}
-            removeTask={removeTask}
-            changeCheckbox={changeCheckbox}
-            setNewFilter={setNewFilter}
-            addTask={addTask}
-            filterType={tl.filter}
-            removeTodolist={removeTodolist}
-          />
-        );
-      })}
+            if (tl.filter === "active") {
+              mainTasks = mainTasks.filter((t) => t.isDone === false);
+            }
+
+            return (
+              <Grid item>
+                <Paper style={{ padding: "20px" }}>
+                  <Todolist
+                    key={tl.id}
+                    id={tl.id}
+                    title={tl.title}
+                    tasks={mainTasks}
+                    removeTask={removeTask}
+                    changeCheckbox={changeCheckbox}
+                    setNewFilter={setNewFilter}
+                    addTask={addTask}
+                    filterType={tl.filter}
+                    removeTodolist={removeTodolist}
+                  />
+                </Paper>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Container>
     </div>
   );
 }

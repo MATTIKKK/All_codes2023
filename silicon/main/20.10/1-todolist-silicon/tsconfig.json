@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../../todolist/src/addItemForm"  ]
 }

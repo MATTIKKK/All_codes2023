@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;   
+}
+
+.app-main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+section{
+    border-right: 1px solid black;
+}
+
+.app-section {
+    width: 25%;
+}
+
+.app-section-center{
+    width:50%;
+
+}

@@ -1,0 +1,9 @@
+.message{
+    border: 1px solid purple;
+    background-color: purple;
+    color: white;
+    margin: 10px 5px;
+    border-radius: 15px 0px 15px 15px;
+    padding: 5px;
+    
+}

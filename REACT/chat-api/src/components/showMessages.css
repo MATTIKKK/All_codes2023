@@ -1,0 +1,10 @@
+.showMessages-title {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.messages {
+    float: right;
+    max-width: 45%;
+    word-wrap: break-word;
+}

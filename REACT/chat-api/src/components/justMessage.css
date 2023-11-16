@@ -2,8 +2,14 @@
     border: 1px solid purple;
     background-color: purple;
     color: white;
-    margin: 10px 5px;
+ 
     border-radius: 15px 0px 15px 15px;
     padding: 5px;
-    
+    max-width: 70%;
+    word-wrap: break-word;
+
+}
+
+.justMessage-container {
+    margin: 25px 5px;
 }

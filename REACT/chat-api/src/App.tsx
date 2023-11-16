@@ -14,7 +14,7 @@ const App = () => {
   return (
     <main className="app-main">
       <section className="app-section">
-        <ShowChats />
+        <ShowChats lastValue={messages[messages.length - 1]}/>
       </section>
       <section className="app-section-center">
         <ShowMessages handleSubmit={handleSubmit} messages={messages}/>

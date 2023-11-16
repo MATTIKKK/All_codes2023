@@ -1,10 +1,16 @@
+
 .showMessages-title {
     font-size: 30px;
-    margin: 10px 0;
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
 .messages {
-    float: right;
-    max-width: 45%;
-    word-wrap: break-word;
+    text-align: right;
+}
+
+.showMessages-header{
+    background-color: purple;
+    margin-bottom: 20px;
+    color: white;
 }

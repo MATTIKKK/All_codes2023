@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import './showInput.css'
+import { Button, Input } from '@material-ui/core';
 
 type ShowInputPropsType = {
   handleSubmit: (value: string) => void;
@@ -12,16 +13,19 @@ const ShowInput = (props: ShowInputPropsType) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.handleSubmit(value);
-    setValue('');
+    if(value.trim() !== ''){
+      props.handleSubmit(value.trim());
+      setValue('');
+    }
+    
   }
 
   return (
     <div className='showInput-container'>
         <hr />
         <form onSubmit={handleSubmit}>
-          <input className="input" type="text" value={value} onChange={handleChange} />
-          <button>Send</button>
+          <Input className="input" type="text" value={value} onChange={handleChange} />
+          <Button style={{color: "purple"}}>Send</Button>
         </form>
         
     </div>

@@ -1,8 +1,11 @@
 import React from 'react'
+import './showinfo.css'
 
 const ShowInfo = () => {
   return (
-    <div>ShowInfo</div>
+    <div className='showInfo-container'>
+      <p>ShowInfo</p>
+    </div>
   )
 }
 

@@ -3,23 +3,20 @@ import "./justMessage.css";
 
 type JustMessagePropsType = {
   value: string;
+  showTime: string;
 };
 
 const JustMessage = (props: JustMessagePropsType) => {
-  const date = new Date();
-  const showTime =
-    date.getHours() + ":" + date.getMinutes();
-  const today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
+  
   return (
-    <div className="justMessage-container">
-      <span style={ {fontSize: '10px', color: 'gray', margin: '5px'} }>{showTime}</span>
-      <span className="message">
-        {props.value}
-      </span>
+      <div className="message">
+        <p style={{color: '', fontSize: '10px', float: 'left'}}>{props.showTime}</p>
+        <span className="message-text" style={{}}>{props.value}</span>
+      </div>
       
-    </div>
+
   );
 };
+
 
 export default JustMessage;

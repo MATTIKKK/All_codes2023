@@ -17,7 +17,7 @@ const ShowChats = (props: ShowChatsPropsType) => {
       <hr color='ECECEC'/>
       <div className="chat">
         <h4>ShowMessages</h4>
-        <p style={ {fontSize: "12px", margin: "4px 2px", fontFamily: "sans-serif", paddingLeft: '5px'} }>{props.lastValue}</p>
+        <div style={ {fontSize: "12px", margin: "4px 2px", fontFamily: "sans-serif", paddingLeft: '5px', overflow:'hidden', width: '50%', height:'14px'} }>{props.lastValue}</div>
       </div>
     </div>
   );

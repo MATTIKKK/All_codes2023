@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import "./showMessages.css";
 import JustMessage from "./JustMessage";
 import { MessageType } from "../App";
@@ -11,23 +17,22 @@ type ShowMessagesPropsType = {
 };
 
 const ShowMessages = (props: ShowMessagesPropsType) => {
-
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const bottomRef = useRef<null | HTMLDivElement>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(value.trim() !== ''){
+    if (value.trim() !== "") {
       props.handleSubmit(value.trim());
-      setValue('');
-    } 
-  }
+      setValue("");
+    }
+  };
 
   useEffect(() => {
-    // 👇️ scroll to bottom every time messages change
-    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [props.messages]);
 
   const newMessages = props.messages.map((m) => {
@@ -44,6 +49,7 @@ const ShowMessages = (props: ShowMessagesPropsType) => {
         <h1 className="showMessages-title">ShowMessages</h1>
         <hr color="F5F5F5" />
       </div>
+
       <div id="showMessages-body">
         <p style={{ textAlign: "center", color: "lightgray" }}>{today}</p>
 
@@ -53,14 +59,19 @@ const ShowMessages = (props: ShowMessagesPropsType) => {
         </div>
       </div>
 
-      <div className='showInput-container'>
+      <div className="showInput-container">
         <hr />
+
         <form onSubmit={handleSubmit}>
-          <Input className="input" type="text" value={value} onChange={handleChange} />
-          <Button style={{color: "purple"}}>Send</Button>
+          <Input
+            className="input"
+            type="text"
+            value={value}
+            onChange={handleChange}
+          />
+          <Button style={{ color: "purple" }}>Send</Button>
         </form>
-        
-    </div>
+      </div>
     </div>
   );
 };
